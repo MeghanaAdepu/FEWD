@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow p-4">
+                    <h2 class="text-center text-success">Feedback Form</h2>
+                    <form id="feedbackForm" novalidate>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
+                            <div class="error" id="nameError"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                            <div class="error" id="emailError"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone <span class="text-danger">*</span></label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required>
+                            <div class="error" id="phoneError"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="rating" class="form-label">Rating <span class="text-danger">*</span></label>
+                            <select id="rating" name="rating" class="form-select" required>
+                                <option value="">Select rating</option>
+                                <option value="5">5 - Excellent</option>
+                                <option value="4">4 - Good</option>
+                                <option value="3">3 - Average</option>
+                                <option value="2">2 - Poor</option>
+                                <option value="1">1 - Very Poor</option>
+                            </select>
+                            <div class="error" id="ratingError"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="questions" class="form-label">Any Questions regarding product or service <span class="text-danger">*</span></label>
+                            <textarea id="questions" name="questions" class="form-control" rows="3" placeholder="Write your questions here..." required></textarea>
+                            <div class="error" id="questionsError"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="comments" class="form-label">Additional Comments (optional)</label>
+                            <textarea id="comments" name="comments" class="form-control" rows="3" placeholder="Write any additional comments..."></textarea>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success w-100">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Validations -->
+    <script>
+        document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            let isValid = true;
+
+            // Name Validation
+            let name = document.getElementById("name").value.trim();
+            let nameError = document.getElementById("nameError");
+            nameError.textContent = "";
+            if (name === "") {
+                nameError.textContent = "Name is required.";
+                isValid = false;
+            }
+
+            // Email Validation
+            let email = document.getElementById("email").value.trim();
+            let emailError = document.getElementById("emailError");
+            emailError.textContent = "";
+            if (!/^\S+@\S+\.\S+$/.test(email)) {
+                emailError.textContent = "Please enter a valid email address.";
+                isValid = false;
+            }
+
+            // Phone Validation (10 digits)
+            let phone = document.getElementById("phone").value.trim();
+            let phoneError = document.getElementById("phoneError");
+            phoneError.textContent = "";
+            if (!/^\d{10}$/.test(phone)) {
+                phoneError.textContent = "Phone number must be exactly 10 digits.";
+                isValid = false;
+            }
+
+            // Rating Validation
+            let rating = document.getElementById("rating").value;
+            let ratingError = document.getElementById("ratingError");
+            ratingError.textContent = "";
+            if (rating === "") {
+                ratingError.textContent = "Please select a rating.";
+                isValid = false;
+            }
+
+            // Questions Validation
+            let questions = document.getElementById("questions").value.trim();
+            let questionsError = document.getElementById("questionsError");
+            questionsError.textContent = "";
+            if (questions === "") {
+                questionsError.textContent = "Please enter a question or comment.";
+                isValid = false;
+            }
+
+            // If Valid, Submit Form
+            if (isValid) {
+                alert("Feedback submitted successfully!");
+                document.getElementById("feedbackForm").reset();
+            }
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

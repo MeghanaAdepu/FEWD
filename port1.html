@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth; /* Enables smooth scrolling */
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <header class="bg-success text-white text-center py-4">
+        <h1>Adepu Meghana</h1>
+        <p>Passionate Engineer | Enthusiastic Learner | Problem Solver | Backend Developer</p>
+    </header>
+
+    <div class="container my-4">
+        <!-- Scroll Navigation Buttons -->
+        <div class="text-center mb-4">
+            <button class="btn btn-success mx-2" onclick="scrollToSection('skills')">Skills</button>
+            <button class="btn btn-success mx-2" onclick="scrollToSection('projects')">Projects</button>
+            <button class="btn btn-success mx-2" onclick="scrollToSection('education')">Education</button>
+            <button class="btn btn-success mx-2" onclick="scrollToSection('contact')">Contact</button>
+        </div>
+
+        <!-- Self Introduction -->
+        <section class="bg-white p-4 rounded shadow" id="intro">
+            <h2 class="text-success">Self Introduction</h2>
+            <p>Driven third-year student currently pursuing a Bachelor's degree in Computer Science. Eager to leverage programming expertise in C++, Java, and Python for innovative software development.</p>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="bg-white p-4 mt-4 rounded shadow" id="skills">
+            <h2 class="text-success">Skills</h2>
+            <ul class="list-group">
+                <li class="list-group-item">Programming: JavaScript, C++, Java</li>
+                <li class="list-group-item">Web Development: HTML, CSS, React, Express.js, Node.js</li>
+                <li class="list-group-item">Machine Learning & AI</li>
+                <li class="list-group-item">Database Management: MySQL, MongoDB</li>
+            </ul>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="bg-white p-4 mt-4 rounded shadow" id="projects">
+            <h2 class="text-success">Projects & Work Experience</h2>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Generative Neurologist</strong> - 
+                    <a href="https://github.com/example/generative-neurologist" target="_blank" class="text-success">GitHub Link</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Education Section -->
+        <section class="bg-white p-4 mt-4 rounded shadow" id="education">
+            <h2 class="text-success">Education</h2>
+            <p><strong>B.Tech</strong> - Keshav Memorial Institute of Technology</p>
+            <p>Year: 2023 - 2026</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="bg-white p-4 mt-4 rounded shadow" id="contact">
+            <h2 class="text-success">Contact Information</h2>
+            <p><strong>Email:</strong> adepumeghana2@gmail.com</p>
+            <p><strong>Phone:</strong> 6281554007</p>
+            <p><strong>Social Media:</strong> 
+                <a href="https://www.linkedin.com/in/meghana-adepu-aa35212a4/" target="_blank" class="text-success">LinkedIn</a>
+            </p>
+        </section>
+    </div>
+
+    <!-- JavaScript for Smooth Scrolling -->
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
