@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WestSide - E-Commerce Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .navbar-brand { font-weight: bold; }
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .hero-section {
+            background:#a0c3ee;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .hero-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: black;
+        }
+        .hero-section p
+        {
+            color:rgb(117, 94, 174);
+        }
+        .contact-section, .gallery-section {
+            padding: 40px 0;
+        }
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .modal img {
+            width: 100%;
+        }
+
+        .contact-section {
+            padding: 60px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+        }
+        .contact-section .container {
+            max-width: 600px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .gallery-section {
+            padding: 60px 0;
+        }
+        .gallery-section img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+        .gallery-section img:hover {
+            transform: scale(1.05);
+        }
+        .gallery-section .card {
+            border: none;
+            overflow: hidden;
+        }
+
+        .gallery-section .card-img-top {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-section {
+            background-color: #232f3e;
+            color: white;
+            padding: 40px 0;
+        }
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+        }
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+        .footer-column {
+            margin-bottom: 20px;
+        }
+        .footer-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            color: #bbb;
+        }
+        .home-btn {
+            margin-top: 10px;
+            background-color: #ff9900;
+            color: white;
+            border-radius: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#home">WestSide</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#">Cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Checkout</a></li>-->
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>
+                </ul>
+                <form class="d-flex ms-3">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-warning" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1>Welcome to WestSide</h1>
+            <p>Your one-stop shop for electronics and gadgets!</p>
+            <a href="#products" class="btn btn-light">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <div class="container mt-4" id="products">
+        <h2 class="text-center mb-4">Featured Products</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="image/Laptop.jpg" class="card-img-top" alt="Laptop">
+                    <div class="card-body">
+                        <h5 class="card-title">Laptop</h5>
+                        <p class="card-text">$20.00</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="image/Razer-BlackShark-V2-Pro-02-2.jpg" class="card-img-top" alt="HeadSet">
+                    <div class="card-body">
+                        <h5 class="card-title">HeadSet</h5>
+                        <p class="card-text">$35.00</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card product-card">
+                    <img src="image/images.jpeg" class="card-img-top" alt="Mobile">
+                    <div class="card-body">
+                        <h5 class="card-title">Mobile</h5>
+                        <p class="card-text">$15.00</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+<section id="gallery" class="gallery-section bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Gallery</h2>
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Gallery Image 1">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Gallery Image 3">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://plus.unsplash.com/premium_photo-1670076513880-f58e3c377903?q=80&w=1318&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Gallery Image 2">
+                </div>
+            </div>
+            <!-- <div class="col-md-4">
+                <div class="card">
+                    <img src="image/gallery3.jpg" class="card-img-top" alt="Gallery Image 3">
+                </div>
+            </div> -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Gallery Image 4">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://plus.unsplash.com/premium_photo-1661645433820-24c8604e4db5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Gallery Image 5">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1648564585735-19491888545c?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZGlhbW9uZCUyMHJpbmdzfGVufDB8fDB8fHww" class="card-img-top" alt="Gallery Image 6">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" placeholder="Subject">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+     <!-- Footer -->
+     <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 footer-column">
+                    <h5 class="footer-title">Get to Know Us</h5>
+                    <a href="#">About Us</a><br>
+                    <a href="#">Careers</a><br>
+                    <a href="#">Press Releases</a><br>
+                    <a href="#">Amazon Cares</a><br>
+                </div>
+                <div class="col-md-3 footer-column">
+                    <h5 class="footer-title">Connect with Us</h5>
+                    <a href="#">Facebook</a><br>
+                    <a href="#">Twitter</a><br>
+                    <a href="#">Instagram</a><br>
+                </div>
+                <div class="col-md-3 footer-column">
+                    <h5 class="footer-title">Make Money with Us</h5>
+                    <a href="#">Sell on WestSide</a><br>
+                    <a href="#">Become an Affiliate</a><br>
+                    <a href="#">Advertise Your Products</a><br>
+                </div>
+                <div class="col-md-3 footer-column">
+                    <h5 class="footer-title">Let Us Help You</h5>
+                    <a href="#">Your Account</a><br>
+                    <a href="#">Returns Centre</a><br>
+                    <a href="#">100% Purchase Protection</a><br>
+                    <a href="#">Help</a><br>
+                    <button class="btn home-btn" onclick="location.href='#home'">Go to Home</button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WestSide. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
